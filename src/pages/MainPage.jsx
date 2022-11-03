@@ -1,4 +1,4 @@
-import { BooksList } from '../components/BooksList';
+import { BooksList } from '../components/BooksList/BooksList';
 import { genres } from '../constants/mock';
 import { useState } from "react"
 

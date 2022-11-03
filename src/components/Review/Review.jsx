@@ -1,5 +1,6 @@
-import star from "../img/star.png"
-import noStar from "../img/no-star.png"
+import star from "../../img/star.png"
+import noStar from "../../img/no-star.png"
+import './Review.sass'
 export const Review = (props) => {
     let review = props.review
     return <li class="main-bottom_list--item">

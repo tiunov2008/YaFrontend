@@ -1,4 +1,5 @@
-import {Book} from './Book';
+import {Book} from '../Book/Book';
+import './BooksList.sass'
 export const BooksList = (genre) => {
     genre = genre.genre
     console.log(genre);

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import star from "../img/star.png"
-import noStar from "../img/no-star.png"
+import star from "../../img/star.png"
+import noStar from "../../img/no-star.png"
+import './Book.sass' 
 export const Book = (props) => {
     const [count, setCount] = useState(0);
     props = props.book

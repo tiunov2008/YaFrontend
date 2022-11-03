@@ -1,3 +1,4 @@
+import './Annotation.sass'
 export const Annotation = (props) => {
     props = props.annotation
         return <li class="main-right_list--item">

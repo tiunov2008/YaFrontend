@@ -1,7 +1,7 @@
-import { ReviewsList } from '../components/ReviewsList';
+import { ReviewsList } from '../components/ReviewsList/ReviewsList';
 import { genres } from '../constants/mock';
-import { Book } from '../components/Book';
-import { Annotation } from '../components/Annotation';
+import { Book } from '../components/Book/Book';
+import { Annotation } from '../components/Annotation/Annotation';
 
 
 export const SecondPage = () => {

@@ -1,4 +1,5 @@
-import cart from "../img/cart.svg"
+import cart from "../../img/cart.svg"
+import "./Header.sass"
 export const Header = () => {
     return <header class="header">
         <span class="header-logo">Магазин</span>
