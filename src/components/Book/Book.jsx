@@ -1,6 +1,7 @@
 import { useState } from "react";
 import star from "../../img/star.png"
 import noStar from "../../img/no-star.png"
+import {Link} from "react-router-dom"
 import './Book.sass' 
 export const Book = (props) => {
     const [count, setCount] = useState(0);
@@ -9,7 +10,7 @@ export const Book = (props) => {
     let book = props[0];
         return <li class="main-right_list--item">
         <div class="main-right_list--item_left">
-            <h2 class="main-right_list--item_title">{book.name}</h2>
+            <h2 class="main-right_list--item_title"><Link props={props} class="main-right_list--item_title" to='/book'>{book.name}</Link></h2>
             <span class="main-right_list--item_author">{book.authors}</span>
             <span class="main-right_list--item_genre">{genre.name}</span>
             <div class="main-right_list--item_stars">
