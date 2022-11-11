@@ -8,4 +8,3 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
-console.log(store.getState());

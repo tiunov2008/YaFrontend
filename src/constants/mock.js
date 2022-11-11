@@ -1,4 +1,4 @@
-const normalizedgenres = [
+const normalizedGenres = [
     {
         id: 'a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2',
         name: 'Фэнтези',
@@ -27,7 +27,7 @@ const normalizedgenres = [
     },
 ];
 
-const normalizedbooks = [
+const normalizedBooks = [
     {
         id: 'd75f762a-eadd-49be-8918-ed0daa8dd024',
         name: 'Несно14сное 4234324проклятье некроманта',
@@ -198,8 +198,8 @@ const normalizedUsers = [
 ];
 
 module.exports = {
-    books: normalizedbooks,
-    genres: normalizedgenres,
+    books: normalizedBooks,
+    genres: normalizedGenres,
     reviews: normalizedReviews,
     users: normalizedUsers,
 };

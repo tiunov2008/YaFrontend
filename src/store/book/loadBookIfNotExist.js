@@ -1,12 +1,8 @@
-import { genreSlice, bookSlice } from "./index";
+import { bookSlice } from "./index";
 import { prepareData } from "../utils";
-import { selectgenres } from "./selectors";
+import { selectBooks } from "./selectors";
 
-export const loadbooksIfNotExist = (genreId) => (dispatch, getState) => {
-  // if (selectgenres(getState())?.length > 0) {
-  //   return;
-  // }
-
+export const loadBooksIfNotExist = (genreId) => (dispatch, getState) => {
   dispatch(bookSlice.actions.startLoading());
   fetch(`http://localhost:3001/api/books?genreId=${genreId}`)
     .then((response) => response.json())

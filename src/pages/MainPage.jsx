@@ -1,29 +1,33 @@
-import { BooksList } from '../components/BooksList/BooksList';
-import { genres } from '../constants/mock';
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { selectGenres } from '../store/genres/selectors';
+import { selectGenres, selectIsGenresSuccess } from '../store/genres/selectors';
 import { loadGenresIfNotExist } from './../store/genres/loadGenresIfNotExist';
+import { Outlet, NavLink } from 'react-router-dom';
 
 
-export const MainPage = (props) => {
+export const MainPage = () => {
     const dispatch = useDispatch();
-    const genres2 = useSelector(state => selectGenres(state))
-    const [activeGenre, setActiveGenre] = useState(genres[0]);
-
+    const genres = useSelector(state => selectGenres(state))
     useEffect(()=>{
         dispatch(loadGenresIfNotExist);
     }, []);
+    const isSuccess = useSelector((state) => selectIsGenresSuccess(state));
+    if (!isSuccess) {
+        return;
+    }
     return <main class="main">
         <div class="main-left main-block">
             <ul class="main-left_list">
                 {
-                    genres.map((genre) => <li class="main-left_list--item" key={genre.id} onClick={() => setActiveGenre(genre)}>{genre.name}</li>)
+                    genres.map((genre) => <li><NavLink class="main-left_list--item" 
+                    key={genre.id} 
+                    to={genre.id}>{genre.name}</NavLink></li>)
                 }
+                
             </ul>
         </div>
         <div class="main-right main-block">
-            <BooksList genre={activeGenre} />
+            <Outlet/>
         </div>
     </main>
 }

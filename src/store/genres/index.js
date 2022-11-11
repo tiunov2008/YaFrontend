@@ -13,18 +13,14 @@ export const genreSlice = createSlice({
     reducers: {
         startLoading: (state, action) => {
             state.status = Statuses.inProgeres;
-            state.entities = {};
-            state.ids = [];
         },
         successLoading: (state, action) => {
             state.status = Statuses.success;
-            state.entities = action.payload.entities;
-            state.ids = action.payload.ids;
+            state.entities = {...state.entities, ...action.payload.entities};
+            state.ids = Array.from(new Set([...state.ids, ...action.payload.ids]));
         },
         failLoading: (state, action) => {
             state.status = Statuses.failed;
-            state.entities = {};
-            state.ids = [];
         },
     }
 });

@@ -1,12 +1,12 @@
 import { Statuses } from "../../constants/statuses";
 
-export const selectbookModule = (state) => state.book;
+export const selectBookModule = (state) => state.book;
 
-export const selectbooks = (state) =>
-  Object.values(selectbookModule(state).entities);
+export const selectBooks = (state) =>
+  Object.values(selectBookModule(state).entities);
 
-export const selectbookById = (state, bookId) =>
-  selectbookModule(state).entities[bookId];
+export const selectBookById = (state, bookId) =>
+  console.log(state);
 
-export const selectIsbooksLoading = (state) =>
-  selectbookModule(state).status === Statuses.inProgress;
+export const selectIsBooksLoading = (state) =>
+  selectBookModule(state).status === Statuses.inProgress;
