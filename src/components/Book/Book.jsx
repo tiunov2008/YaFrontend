@@ -16,7 +16,7 @@ import { selectBookCount } from "../../store/cart/selectors";
 
 export const Book = ({ ids }) => {
     const dispatch = useDispatch();
-    console.log(ids);
+
     const bookId = ids[0]
     const genreId = ids[1]
     const book = useSelector((state) => selectBookById(state, bookId));

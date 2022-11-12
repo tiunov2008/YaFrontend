@@ -19,7 +19,7 @@ export const Review = (reviewId) => {
     if (!isSuccess){
         return;
     }
-    console.log(user);
+
     return <li class="main-bottom_list--item">
         <div class="main-bottom_list--item_top">
             <h2 class="main-bottom_list--item_title">{user.name}</h2>

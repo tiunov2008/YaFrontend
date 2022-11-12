@@ -33,7 +33,7 @@ export const BooksList = () => {
 }
 export const CartList = () => {
     const cart = useSelector((state) => getCart(state));
-    console.log(cart);
+
     return <ul class="main-right_list">
         {
             Object.entries(cart).map(([key, value]) => <Book key={value} ids={[key, '982bfbce-c5e0-41a0-9f99-d5c20ecee49d']} />)
