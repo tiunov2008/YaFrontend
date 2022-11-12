@@ -6,7 +6,7 @@ export const selectBooks = (state) =>
   Object.values(selectBookModule(state).entities);
 
 export const selectBookById = (state, bookId) =>
-  console.log(state);
-
-export const selectIsBooksLoading = (state) =>
-  selectBookModule(state).status === Statuses.inProgress;
+  selectBookModule(state).entities[bookId];
+  
+export const selectIsBooksSuccess = (state) =>
+  selectBookModule(state).status === Statuses.success;

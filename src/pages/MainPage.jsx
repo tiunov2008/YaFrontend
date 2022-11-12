@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { selectGenres, selectIsGenresSuccess } from '../store/genres/selectors';
-import { loadGenresIfNotExist } from './../store/genres/loadGenresIfNotExist';
+import { selectGenres, selectIsGenresSuccess } from '../store/genre/selectors';
+import { loadGenresIfNotExist } from './../store/genre/loadGenresIfNotExist';
 import { Outlet, NavLink } from 'react-router-dom';
 
 
@@ -19,7 +19,7 @@ export const MainPage = () => {
         <div class="main-left main-block">
             <ul class="main-left_list">
                 {
-                    genres.map((genre) => <li><NavLink class="main-left_list--item" 
+                    genres.map((genre) => <li class="main-left_list--item" ><NavLink className="main-left_list--item" 
                     key={genre.id} 
                     to={genre.id}>{genre.name}</NavLink></li>)
                 }

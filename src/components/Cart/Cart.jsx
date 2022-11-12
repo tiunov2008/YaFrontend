@@ -1,28 +1,25 @@
 import './Cart.sass';
+import { useSelector } from 'react-redux';
+import { getCart } from './../../store/cart/selectors';
+import { CartItem } from './../CartItem/CartItem';
+import { BooksList, CartList } from './../BooksList/BooksList';
 export const Cart = () => {
-    return <div class="main-left main-block main-cart">
+    const cart = useSelector((state) => getCart(state));
+    return <>
+    <div class="main-left main-block main-cart">
         <h2 class="cart-title">Ваш заказ:</h2>
         <ul class="cart-list">
-            <li class="cart-list_item">
-                <span class="cart-list_item--name">Несносное проклятье некроманта</span>
-                <span class="cart-list_item--price">250 ₽</span>
-            </li>
-            <li class="cart-list_item">
-                <span class="cart-list_item--name">Несносе некроманта</span>
-                <span class="cart-list_item--price">250 ₽</span>
-            </li>
-            <li class="cart-list_item">
-                <span class="cart-list_item--name">Несносноье некроманта</span>
-                <span class="cart-list_item--price">250 ₽</span>
-            </li>
-            <li class="cart-list_item">
-                <span class="cart-list_item--name">Несносное пр некроманта</span>
-                <span class="cart-list_item--price">250 ₽</span>
-            </li>
+            {Object.entries(cart).map(([key, value]) => <CartItem props={[key, value]} />)}
         </ul>
         <div class="cart-bottom">
-            <span class="cart-sum_title">Итого:</span><span class="cart-sum_value">1000₽</span>
+            <span class="cart-sum_title">Итого:</span><span class="cart-sum_value">
+                {Object.entries(cart).map(([key, value]) => <CartItem props={[key, value, true]} />)}
+            </span>
             <button class="cart-button">Купить</button>
         </div>
     </div>
+    <div class="main-right">
+        <CartList></CartList>
+    </div>
+    </>
 }

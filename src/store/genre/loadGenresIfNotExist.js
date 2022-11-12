@@ -1,6 +1,6 @@
-import { genreSlice } from "../genres/index";
+import { genreSlice } from "../genre/index";
 import { prepareData } from "../utils";
-import { selectGenres } from "../genres/selectors";
+import { selectGenres } from "../genre/selectors";
 
 export const loadGenresIfNotExist = (dispatch, getState) => {
   if (selectGenres(getState())?.length > 0) {
