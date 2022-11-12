@@ -2,7 +2,7 @@ import './Cart.sass';
 import { useSelector } from 'react-redux';
 import { getCart } from './../../store/cart/selectors';
 import { CartItem } from './../CartItem/CartItem';
-import { BooksList, CartList } from './../BooksList/BooksList';
+import { CartList } from './../BooksList/BooksList';
 export const Cart = () => {
     const cart = useSelector((state) => getCart(state));
     return <>
@@ -13,7 +13,7 @@ export const Cart = () => {
         </ul>
         <div class="cart-bottom">
             <span class="cart-sum_title">Итого:</span><span class="cart-sum_value">
-                {Object.entries(cart).map(([key, value]) => <CartItem props={[key, value, true]} />)}
+                {Object.entries(cart).map(([key, value]) => Number(<CartItem props={[key, value, true]} />))}
             </span>
             <button class="cart-button">Купить</button>
         </div>
